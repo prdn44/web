@@ -1,0 +1,910 @@
+/* ================= RESET & GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #020617; /* dark tech theme */
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= NAVBAR ================= */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  background: rgba(10, 10, 25, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #cbd5f5;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+.btn-nav {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  color: #020617;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.9);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  padding: 100px 0;
+  position: relative;
+
+  /* Background full image */
+  background-image: url("assets/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Overlay gelap agar teks terbaca */
+  background-blend-mode: overlay;
+  background-color: rgba(2, 6, 23, 0.87);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-size: 46px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #cbd5f5;
+  margin-bottom: 25px;
+}
+
+/* ================= BADGE LAYANAN ================= */
+.hero-services {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero-services span {
+  display: inline-block;
+  margin: 6px 6px 0 0;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #e0f2fe;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* ================= HERO CARD ================= */
+.hero-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
+}
+
+.hero-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #a5b4fc;
+}
+
+.hero-card ul {
+  list-style: none;
+}
+
+.hero-card li {
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+/* ================= CTA SECTION ================= */
+.cta {
+  padding: 90px 0;
+}
+
+.cta-box {
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 80px rgba(56, 189, 248, 0.15);
+}
+
+.cta-box h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #e0f2fe;
+}
+
+.cta-box p {
+  color: #cbd5f5;
+  margin-bottom: 25px;
+}
+
+/* ================= BUTTON PRIMARY ================= */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 34px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38bdf8, #6366f1);
+  color: #020617;
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.9);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  text-align: center;
+  padding: 35px 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* ================= ANIMASI ================= */
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 1s ease forwards;
+}
+
+.animate-slide-down {
+  animation: slideDownFade 1s ease forwards;
+}
+
+/* ================= RESPONSIVE ================= */
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 36px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .hero-card {
+    padding: 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero-text h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .hero-services {
+    justify-content: center;
+  }
+
+  .hero-card {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .cta-box {
+    padding: 40px 20px;
+  }
+
+  .cta-box h2 {
+    font-size: 28px;
+  }
+
+  .cta-box p {
+    font-size: 15px;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 24px;
+  }
+
+  .cta-box h2 {
+    font-size: 24px;
+  }
+
+  .hero-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* ================= HERO ABOUT ================= */
+.about-hero {
+  padding: 80px 0;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  position: relative;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38bdf8;
+}
+
+.floating-msg {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #38bdf8;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  white-space: nowrap;
+}
+
+.hero-right h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-right p {
+  font-size: 18px;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* ================= ABOUT INFO ================= */
+.about-info {
+  padding: 60px 0;
+  /* Background full image */
+  background-image: url("assets/about.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Overlay gelap agar teks terbaca */
+  background-blend-mode: overlay;
+  background-color: rgba(2, 6, 23, 0.87);
+  border-radius: 20px;
+  margin: 50px auto;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.1);
+}
+
+.about-headline {
+  font-size: 32px;
+  text-align: center; /* Rata tengah */
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-description {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #cbd5f5;
+  text-align: justify; /* Rata kiri-kanan */
+  margin-bottom: 40px;
+}
+
+/* Tab informasi */
+.about-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.about-tabs .tab {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 40px rgba(56, 189, 248, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-tabs .tab:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(56, 189, 248, 0.2);
+}
+
+.about-tabs h3 {
+  font-size: 20px;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.about-tabs p {
+  font-size: 15px;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+/* ================= HERO ABOUT RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  /* Tablet: 2 kolom jadi 1:1 agar lebih proporsional */
+  .about-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .hero-right h2 {
+    font-size: 32px;
+  }
+
+  .hero-right p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile: 1 kolom, foto di atas, teks di bawah */
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center; /* teks nama di tengah */
+    row-gap: 25px;
+  }
+
+  .hero-left {
+    margin-bottom: 20px; /* spasi antara foto & teks */
+  }
+
+  .profile-wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .floating-msg {
+    bottom: -15px; /* floating tetap di bawah foto */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px; /* lebih kecil di mobile */
+  }
+
+  .hero-right h2 {
+    font-size: 28px; /* lebih pas di layar kecil */
+  }
+
+  .hero-right p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile: font lebih kecil */
+  .hero-right h2 {
+    font-size: 24px;
+  }
+
+  .hero-right p {
+    font-size: 14px;
+  }
+
+  .floating-msg {
+    font-size: 12px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-description {
+    font-size: 16px;
+  }
+
+  .about-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .about-tabs .tab {
+    padding: 20px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .about-headline {
+    font-size: 28px;
+  }
+
+  .about-description {
+    font-size: 15px;
+  }
+
+  .about-tabs h3 {
+    font-size: 18px;
+  }
+
+  .about-tabs p {
+    font-size: 14px;
+  }
+}
+/* ================= HERO CONTACT ================= */
+.contact-hero {
+  padding: 100px 0;
+  text-align: center;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+}
+
+.contact-hero h2 {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.contact-hero p {
+  font-size: 18px;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* ================= CONTACT MAIN GRID ================= */
+.contact-main {
+  padding: 60px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* kiri & kanan */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* KIRI: alasan memilih kami */
+.contact-left h3 {
+  font-size: 28px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-left ul {
+  list-style: none;
+  font-size: 16px;
+  color: #cbd5f5;
+  line-height: 2;
+  padding-left: 0;
+}
+
+.contact-left ul li {
+  margin-bottom: 12px;
+}
+
+/* KANAN: info kontak */
+.contact-right h3 {
+  font-size: 28px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 16px;
+  color: #cbd5f5;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.contact-list li a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-list li a:hover {
+  color: #818cf8;
+  text-decoration: underline;
+}
+
+/* Maps */
+.contact-map {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ================= CTA CONTACT ================= */
+.contact-cta {
+  padding: 80px 0;
+}
+
+.contact-cta .cta-box {
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 80px rgba(56, 189, 248, 0.15);
+}
+
+.contact-cta .cta-box h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #e0f2fe;
+}
+
+.contact-cta .cta-box p {
+  color: #cbd5f5;
+  margin-bottom: 25px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* mobile: 1 kolom */
+    text-align: center;
+  }
+
+  .contact-left h3,
+  .contact-right h3 {
+    font-size: 28px;
+  }
+
+  .contact-left ul,
+  .contact-list {
+    font-size: 16px;
+  }
+
+  .contact-hero h2 {
+    font-size: 28px;
+  }
+
+  .contact-hero p {
+    font-size: 16px;
+  }
+
+  .contact-cta .cta-box h2 {
+    font-size: 28px;
+  }
+
+  .contact-cta .cta-box p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-left h3,
+  .contact-right h3 {
+    font-size: 24px;
+  }
+
+  .contact-left ul,
+  .contact-list {
+    font-size: 15px;
+  }
+
+  .contact-hero h2 {
+    font-size: 24px;
+  }
+
+  .contact-hero p {
+    font-size: 14px;
+  }
+
+  .contact-cta .cta-box h2 {
+    font-size: 24px;
+  }
+
+  .contact-cta .cta-box p {
+    font-size: 14px;
+  }
+}
+
+/* ================= PROJECTS HERO ================= */
+.projects-hero {
+  padding: 100px 0;
+  text-align: center;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+}
+
+.projects-hero h2 {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.projects-hero p {
+  font-size: 18px;
+  color: #cbd5f5;
+  line-height: 1.6;
+}
+
+/* ================= PROJECTS SECTION ================= */
+.projects-section {
+  padding: 80px 0;
+}
+
+/* Grid utama project */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* ================= PROJECT CARD ================= */
+.project-card {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.08);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.2);
+}
+
+/* Gambar project */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Konten dalam card */
+.project-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-content h3 {
+  font-size: 20px;
+  color: #e0f2fe;
+  margin-bottom: 10px;
+}
+
+.project-content p {
+  font-size: 15px;
+  color: #cbd5f5;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+/* Tag project */
+.project-tags {
+  margin-bottom: 15px;
+}
+
+.project-tags span {
+  display: inline-block;
+  font-size: 12px;
+  padding: 6px 12px;
+  margin: 4px 4px 0 0;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* Tombol detail */
+.btn-secondary {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #38bdf8;
+  color: #020617;
+}
+
+/* ================= PROJECT CTA ================= */
+.projects-cta {
+  padding: 80px 0;
+}
+
+.projects-cta .cta-box {
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 0 80px rgba(56, 189, 248, 0.15);
+}
+
+.projects-cta .cta-box h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #e0f2fe;
+}
+
+.projects-cta .cta-box p {
+  color: #cbd5f5;
+  margin-bottom: 25px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-hero h2 {
+    font-size: 30px;
+  }
+
+  .projects-hero p {
+    font-size: 16px;
+  }
+
+  .projects-cta .cta-box h2 {
+    font-size: 28px;
+  }
+}
